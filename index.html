@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长沙到桂林旅游攻略</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e5799 0%, #2989d8 50%, #207cca 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+        }
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 40px;
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        .section h2 {
+            color: #2989d8;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #2989d8;
+            display: flex;
+            align-items: center;
+        }
+        .section h2::before {
+            content: "📍";
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+        .info-box {
+            background: #f0f8ff;
+            border-left: 5px solid #2989d8;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+        }
+        .info-box h3 {
+            color: #1e5799;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .route-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+        .route-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+        .route-card:hover {
+            border-color: #2989d8;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(41, 137, 216, 0.2);
+        }
+        .route-card .icon {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .route-card h4 {
+            color: #2989d8;
+            font-size: 1.4em;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .route-card .time {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .route-card .price {
+            color: #27ae60;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        .day-plan {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+        }
+        .day-plan h3 {
+            color: #1565c0;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .day-plan h3::before {
+            content: "☀️";
+            margin-right: 12px;
+            font-size: 1.3em;
+        }
+        .attraction-list {
+            list-style: none;
+        }
+        .attraction-list li {
+            padding: 15px 0;
+            border-bottom: 1px dashed #90caf9;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.05em;
+        }
+        .attraction-list li:last-child {
+            border-bottom: none;
+        }
+        .attraction-list li::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.3em;
+        }
+        .food-section {
+            background: #fff3e0;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+        }
+        .food-section h3 {
+            color: #e65100;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .food-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .food-item:hover {
+            transform: scale(1.05);
+        }
+        .food-item .emoji {
+            font-size: 2.5em;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .food-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .food-item p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .tips-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 25px 0;
+        }
+        .tips-box h3 {
+            color: #7b1fa2;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+        .tips-list {
+            list-style: none;
+        }
+        .tips-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05em;
+        }
+        .tips-list li::before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1.05em;
+        }
+        .budget-table th {
+            background: #2989d8;
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        .budget-table td {
+            padding: 15px 18px;
+            border-bottom: 1px solid #eee;
+        }
+        .budget-table tr:hover {
+            background: #f5f5f5;
+        }
+        .budget-table .total {
+            background: #2989d8;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .spot-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .spot-card {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .spot-card:hover {
+            transform: translateY(-5px);
+        }
+        .spot-card .emoji {
+            font-size: 4em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .spot-card h4 {
+            color: #1565c0;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        .spot-card p {
+            color: #555;
+            font-size: 0.95em;
+        }
+        .image-note {
+            background: #fff9c4;
+            border-left: 4px solid #fbc02d;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.95em;
+            color: #f57f17;
+        }
+        .footer {
+            background: #1565c0;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        .footer p {
+            opacity: 0.9;
+            margin: 10px 0;
+        }
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌄 长沙到桂林旅游攻略</h1>
+            <p>山水甲天下 · 四天三晚深度游</p>
+        </div>
+
+        <div class="content">
+            <!-- 图片说明 -->
+            <div class="image-note">
+                💡 <strong>提示</strong>：本攻略使用网络公开图片，如需查看真实桂林风景照片，建议在搜索引擎或小红书搜索"桂林漓江""阳朔西街""象鼻山"等关键词。
+            </div>
+
+            <!-- 行程概览 -->
+            <div class="section">
+                <h2>行程概览</h2>
+                <div class="info-box">
+                    <h3>📅 建议游玩时间</h3>
+                    <p><strong>4天3晚</strong>（春季3-5月或秋季9-11月最佳）</p>
+                    <p>桂林山水四季皆美，但春秋两季气候最舒适，雨量适中，漓江水位适宜。</p>
+                </div>
+                
+                <!-- 景点展示（使用emoji代替图片） -->
+                <div class="spot-gallery">
+                    <div class="spot-card">
+                        <span class="emoji">🏞️</span>
+                        <h4>漓江风光</h4>
+                        <p>百里画廊，山水相依<br>人民币20元背景图案取景地</p>
+                    </div>
+                    <div class="spot-card">
+                        <span class="emoji">🌄</span>
+                        <h4>阳朔西街</h4>
+                        <p>文艺小镇，夜色迷人<br>中西文化交融的步行街</p>
+                    </div>
+                    <div class="spot-card">
+                        <span class="emoji">🐘</span>
+                        <h4>象鼻山</h4>
+                        <p>桂林城徽，标志性景点<br>山形酷似大象饮水</p>
+                    </div>
+                    <div class="spot-card">
+                        <span class="emoji">🛶</span>
+                        <h4>遇龙河竹筏</h4>
+                        <p>小小竹排江中游<br>体验原始自然之美</p>
+                    </div>
+                    <div class="spot-card">
+                        <span class="emoji">🌉</span>
+                        <h4>两江四湖</h4>
+                        <p>夜游最美，灯光璀璨<br>日月双塔倒影如画</p>
+                    </div>
+                    <div class="spot-card">
+                        <span class="emoji">⛰️</span>
+                        <h4>相公山日出</h4>
+                        <p>俯瞰漓江第一湾<br>摄影爱好者必去</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 交通方式 -->
+            <div class="section">
+                <h2>交通方式</h2>
+                <div class="route-options">
+                    <div class="route-card">
+                        <div class="icon">🚄</div>
+                        <h4>高铁（推荐）</h4>
+                        <p class="time">约3.5-4小时</p>
+                        <p>长沙南站 → 桂林西站/桂林北站</p>
+                        <p class="price">二等座 ¥170-200</p>
+                        <p style="margin-top: 10px; color: #27ae60;">✅ 最快捷舒适，班次多</p>
+                    </div>
+                    <div class="route-card">
+                        <div class="icon">🚗</div>
+                        <h4>自驾</h4>
+                        <p class="time">约5-6小时</p>
+                        <p>走泉南高速(G72)</p>
+                        <p class="price">油费+过路费约¥400</p>
+                        <p style="margin-top: 10px; color: #27ae60;">✅ 自由灵活，沿途可停</p>
+                    </div>
+                    <div class="route-card">
+                        <div class="icon">✈️</div>
+                        <h4>飞机</h4>
+                        <p class="time">飞行1小时+往返机场2小时</p>
+                        <p>黄花机场 → 两江机场</p>
+                        <p class="price">¥300-600（提前订）</p>
+                        <p style="margin-top: 10px; color: #e74c3c;">⚠️ 性价比不高，不建议</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 详细行程 -->
+            <div class="section">
+                <h2>详细行程</h2>
+                
+                <div class="day-plan">
+                    <h3>第一天：抵达桂林 - 两江四湖夜游</h3>
+                    <ul class="attraction-list">
+                        <li><strong>上午/中午</strong>：从长沙出发，乘高铁抵达桂林</li>
+                        <li><strong>下午</strong>：入住酒店（建议住象山区或秀峰区）</li>
+                        <li><strong>傍晚</strong>：正阳步行街逛街，品尝桂林米粉</li>
+                        <li><strong>晚上</strong>：两江四湖夜游（必玩！船票约¥180）<br>
+                        <span style="color: #666; font-size: 0.9em;">💡 推荐景点：日月双塔、玻璃桥、榕湖杉湖</span></li>
+                    </ul>
+                </div>
+
+                <div class="day-plan">
+                    <h3>第二天：漓江精华游 - 阳朔西街</h3>
+                    <ul class="attraction-list">
+                        <li><strong>上午</strong>：乘船游漓江（桂林→阳朔，约4小时，¥200+）<br>
+                        <span style="color: #666; font-size: 0.9em;">💡 经典景点：九马画山、黄布倒影、兴坪古镇</span></li>
+                        <li><strong>中午</strong>：船上简餐或到阳朔后品尝啤酒鱼</li>
+                        <li><strong>下午</strong>：抵达阳朔，租电动车骑行十里画廊</li>
+                        <li><strong>傍晚</strong>：遇龙河竹筏漂流（可选，约¥100）</li>
+                        <li><strong>晚上</strong>：阳朔西街逛夜市、泡吧、吃小吃</li>
+                    </ul>
+                </div>
+
+                <div class="day-plan">
+                    <h3>第三天：阳朔深度游 - 返回桂林</h3>
+                    <ul class="attraction-list">
+                        <li><strong>上午</strong>：相公山日出（需早起，可包车或骑行）<br>
+                        <span style="color: #666; font-size: 0.9em;">💡 最佳拍摄时间：日出前30分钟到达</span></li>
+                        <li><strong>中午</strong>：回阳朔县城午餐</li>
+                        <li><strong>下午</strong>：银子岩溶洞（门票¥60）或世外桃源</li>
+                        <li><strong>傍晚</strong>：返回桂林市区</li>
+                        <li><strong>晚上</strong>：东西巷逛古街，吃椿记烧鹅</li>
+                    </ul>
+                </div>
+
+                <div class="day-plan">
+                    <h3>第四天：桂林市区 - 返程</h3>
+                    <ul class="attraction-list">
+                        <li><strong>上午</strong>：象鼻山公园（桂林地标，门票¥55）<br>
+                        <span style="color: #666; font-size: 0.9em;">💡 最佳拍照点：爱情岛、象鼻山观景台</span></li>
+                        <li><strong>中午</strong>：品尝桂林特色美食</li>
+                        <li><strong>下午</strong>：购买特产（三花酒、桂林辣椒酱、罗汉果）</li>
+                        <li><strong>傍晚</strong>：乘高铁返回长沙</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 美食推荐 -->
+            <div class="section">
+                <h2>必吃美食</h2>
+                <div class="food-section">
+                    <h3>🍜 桂林特色美食</h3>
+                    <div class="food-grid">
+                        <div class="food-item">
+                            <span class="emoji">🍜</span>
+                            <strong>桂林米粉</strong>
+                            <p>卤菜粉、马肉米粉<br>人均¥10-15</p>
+                        </div>
+                        <div class="food-item">
+                            <span class="emoji">🐟</span>
+                            <strong>阳朔啤酒鱼</strong>
+                            <p>漓江鱼+啤酒烧制<br>人均¥60-100</p>
+                        </div>
+                        <div class="food-item">
+                            <span class="emoji">🦆</span>
+                            <strong>椿记烧鹅</strong>
+                            <p>桂林名菜，皮脆肉嫩<br>人均¥80-120</p>
+                        </div>
+                        <div class="food-item">
+                            <span class="emoji">🥟</span>
+                            <strong>荔浦芋扣肉</strong>
+                            <p>香糯可口，入口即化</p>
+                        </div>
+                        <div class="food-item">
+                            <span class="emoji">🍮</span>
+                            <strong>马蹄糕</strong>
+                            <p>传统甜品，清爽Q弹</p>
+                        </div>
+                        <div class="food-item">
+                            <span class="emoji">🥢</span>
+                            <strong>恭城油茶</strong>
+                            <p>瑶族特色早餐，配粑粑</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 费用预算 -->
+            <div class="section">
+                <h2>费用预算（人均）</h2>
+                <table class="budget-table">
+                    <tr>
+                        <th>项目</th>
+                        <th>经济型</th>
+                        <th>舒适型</th>
+                        <th>豪华型</th>
+                    </tr>
+                    <tr>
+                        <td>往返交通（高铁）</td>
+                        <td>¥340</td>
+                        <td>¥340</td>
+                        <td>¥340</td>
+                    </tr>
+                    <tr>
+                        <td>住宿（3晚）</td>
+                        <td>¥300</td>
+                        <td>¥600</td>
+                        <td>¥1200</td>
+                    </tr>
+                    <tr>
+                        <td>门票+活动</td>
+                        <td>¥400</td>
+                        <td>¥600</td>
+                        <td>¥800</td>
+                    </tr>
+                    <tr>
+                        <td>餐饮（4天）</td>
+                        <td>¥300</td>
+                        <td>¥500</td>
+                        <td>¥800</td>
+                    </tr>
+                    <tr>
+                        <td>当地交通</td>
+                        <td>¥100</td>
+                        <td>¥200</td>
+                        <td>¥400</td>
+                    </tr>
+                    <tr>
+                        <td>购物+其他</td>
+                        <td>¥100</td>
+                        <td>¥200</td>
+                        <td>¥500</td>
+                    </tr>
+                    <tr class="total">
+                        <td>合计</td>
+                        <td>¥1540</td>
+                        <td>¥2440</td>
+                        <td>¥4040</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- 实用贴士 -->
+            <div class="section">
+                <h2>实用贴士</h2>
+                <div class="tips-box">
+                    <h3>📝 出行必备</h3>
+                    <ul class="tips-list">
+                        <li><strong>证件</strong>：身份证、学生证（门票半价）</li>
+                        <li><strong>衣物</strong>：舒适的步行鞋、防晒衣、雨伞</li>
+                        <li><strong>APP</strong>：高德地图、大众点评、12306</li>
+                        <li><strong>现金</strong>：准备少量现金，部分小店不支持手机支付</li>
+                    </ul>
+                </div>
+                <div class="tips-box">
+                    <h3>⚠️ 避坑指南</h3>
+                    <ul class="tips-list">
+                        <li>不要在景区门口买"低价票"，容易上当受骗</li>
+                        <li>阳朔西街酒吧消费前先问清价格</li>
+                        <li>漓江游船选正规码头（磨盘山/竹江），不要信路边拉客的</li>
+                        <li>吃啤酒鱼前先问清价格，是按斤还是按条</li>
+                        <li>租电动车检查电量，记得带充电器</li>
+                    </ul>
+                </div>
+                <div class="tips-box">
+                    <h3>📸 拍照打卡点推荐</h3>
+                    <ul class="tips-list">
+                        <li><strong>象鼻山</strong>：爱情岛拍摄象鼻全景，最佳时间傍晚</li>
+                        <li><strong>两江四湖</strong>：日月双塔夜景，榕湖杉湖倒影</li>
+                        <li><strong>相公山</strong>：俯瞰漓江第一湾，日出时分最壮观</li>
+                        <li><strong>十里画廊</strong>：工农桥、大榕树、月亮山沿途</li>
+                        <li><strong>阳朔西街</strong>：夜晚霓虹灯下的复古街道</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 住宿推荐 -->
+            <div class="section">
+                <h2>住宿推荐</h2>
+                <div class="info-box">
+                    <h3>🏨 桂林市区</h3>
+                    <p><strong>象山区/秀峰区</strong>：离景点近，交通便利</p>
+                    <p>🏆 推荐：漓江大瀑布酒店、香格里拉酒店、喜来登</p>
+                    <p>💰 经济型：如家、汉庭、7天连锁</p>
+                </div>
+                <div class="info-box">
+                    <h3>🏨 阳朔</h3>
+                    <p><strong>西街附近</strong>：热闹方便，夜生活丰富</p>
+                    <p><strong>遇龙河附近</strong>：安静风景好，适合度假</p>
+                    <p>🏆 推荐：阳朔悦榕庄、糖舍、各类精品民宿</p>
+                </div>
+            </div>
+
+            <!-- 紧急联系 -->
+            <div class="section">
+                <h2>紧急联系</h2>
+                <div class="info-box">
+                    <h3>☎️ 重要电话</h3>
+                    <p><strong>桂林旅游投诉</strong>：0773-2800315</p>
+                    <p><strong>报警电话</strong>：110</p>
+                    <p><strong>急救电话</strong>：120</p>
+                    <p><strong>桂林火车站</strong>：0773-2164842</p>
+                    <p><strong>旅游咨询电话</strong>：0773-2800315</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🌟 祝您旅途愉快，玩得开心！🌟</p>
+            <p>攻略制作时间：2026年3月3日 | 由小月为您精心制作</p>
+            <p>如需查看真实风景照片，请搜索"桂林漓江""阳朔西街""象鼻山"等关键词</p>
+        </div>
+    </div>
+</body>
+</html>
